@@ -1,0 +1,60 @@
+<div class="main">
+    <h1>Log In</h1>
+</div>
+
+
+<div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+
+        <div class="form-group">
+            <label for="firstName">First Name<span [ngClass]="['text-danger']">*</span></label>
+            <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="login.fName"
+                #ftName="ngModel" minlength="6" required (keypress)="onlyLetters($event)" />
+                <div *ngIf="ftName?.touched && ftName?.invalid" [ngClass]="['text-danger']">
+                    <small *ngIf="ftName?.errors?.['required']">First name is required.</small>
+                    <!-- <small *ngIf="firstName?.errors?.['pattern']"> First Name must only contain letters..</small> -->
+                    <small *ngIf="ftName?.errors?.['minlength']">First name must be at least 6 characters long.</small>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="login.lName"
+                #ltName="ngModel" [pattern]="lastNamePattern" required  minlength="6" (keypress)="onlyLetters($event)"/>
+                <div *ngIf="ltName?.touched && ltName?.invalid" [ngClass]="['text-danger']">
+                    <small *ngIf="ltName?.errors?.['required']">Last name is required.</small>
+                    <small *ngIf="ltName?.errors?.['pattern']"> Last Name must only contain letters..</small>
+                    <small *ngIf="ltName?.errors?.['minlength']">Last name must be at least 6 characters long.</small>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email<span [ngClass]="['text-danger']">*</span></label>
+            <input type="email" id="email" class="form-control" name="email" [(ngModel)]="login.email" #mail="ngModel"
+                [pattern]="emailPattern" required />
+                <div *ngIf="mail?.touched && mail?.invalid" [ngClass]="['text-danger']">
+                    <small *ngIf="mail?.errors?.['required']">Mail is required.</small>
+                    <small *ngIf="mail?.errors?.['pattern']"> Enter a valid mail</small>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone<span [ngClass]="['text-danger']">*</span></label>
+            <input type="tel" id="phone" class="form-control" name="phone" [(ngModel)]="login.phne" #phne="ngModel"
+                [pattern]="phonePattern" required minlength="10" maxlength="10"  (keypress)="onlyNumbers($event)" />
+                <div *ngIf="phne?.touched && phne?.invalid" [ngClass]="['text-danger']">
+                    <small *ngIf="phne?.errors?.['required']">Phone Number is required.</small>
+                    <small *ngIf="phne?.errors?.['pattern']">Contains only numbers.</small>
+                    <small *ngIf="phne?.errors?.['minlength']">Must contain 10 numbers.</small>
+                    <small *ngIf="phne?.errors?.['maxlength']">Must contain 10 numbers.</small>
+
+                </div>
+        </div>
+
+       
+<br>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit(loginForm)" [disabled]="loginForm.invalid">
+            Submit
+        </button>
+    </form>
+</div>

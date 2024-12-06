@@ -1,0 +1,81 @@
+<div class="content"
+  style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:mediumvioletred;">
+  <h1><b><i>Delish Buy</i></b></h1>
+</div>
+<div class="content">
+  <h4><i>Delight in Every Bite</i></h4>
+</div>
+
+<div class="slider-container">
+  <!-- Image Display -->
+  <div class="slider">
+    <img [src]="images[currentIndex]" alt="Image Slider" class="slider-image" />
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="navigation">
+    <button (click)="prevImage()" class="prev-btn">
+      << </button>
+        <button (click)="nextImage()" class="next-btn">>></button>
+  </div>
+
+  <!-- Optional: Display the current index of the image -->
+  <div class="image-index">
+    {{ currentIndex + 1 }} / {{ images.length }}
+  </div>
+</div>
+
+
+
+
+
+<div style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; color: purple;">
+  <h1><i>Cake Shop</i></h1>
+
+  <h2 style="color: purple"> Handcrafted Cakes & Pastries</h2>
+</div>
+<p style="font-family:'Times New Roman', Times, serif; font-size: 22px;"><i>
+    The Cake Shop feels like a fairy tale come alive. Exquisitely crafted cakes surround you as the irresistible
+    aroma of freshly baked goods wafts towards you, assuring you that this is the haven of all your indulgence.
+
+    Handcrafted chocolates, traditional French pastries, and designer cakes are just the beginning of what you can
+    expect at this award-winning patisserie. Taste the finest bread from around the world, like the German
+    Kraftkorn, Vollkorn and Roggenfix, and the Italian Ciabattas, Focaccia, and Grissinis, all of which are made
+    from flours sourced carefully from Europe.
+
+    Delight your senses here with a steaming cup of coffee, a perfect slice of cake, and the sweetest conversations
+    with your loved ones.
+  </i>
+</p>
+<div style="text-align: center; color: purple;">
+  <h2>Choose Flavors...</h2>
+  <div class="slider-container">
+    <!-- Image Display -->
+    <div class="slider">
+      <img [src]="image[cutIndex]" alt="Image Slider" class="slider-image" />
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+      <button (click)="prev()" class="prev-btn"> << </button>
+          <button (click)="next()" class="next-btn">>></button>  </div>
+
+    <!-- Optional: Display the current index of the image -->
+    <div class="image-index">
+      {{ cutIndex + 1 }} / {{ image.length }}
+    </div>
+    
+  </div>
+  <div>
+    <h4>
+      Description
+    </h4>
+    <p>A cake is a sweet baked good that's typically made with flour, sugar, eggs, butter or oil, a liquid, and a
+      leavening agent like baking powder or baking soda. Cakes can be simple or elaborate, and are often decorated and
+      served for special occasions like birthdays or weddings</p>
+  </div><br>
+  <button (click)="cart()">Add Cart</button>
+  <div><br>
+    <button (click)="buy()">Buy</button>
+  </div>
+</div>
