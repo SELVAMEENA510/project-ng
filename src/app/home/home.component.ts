@@ -8,23 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  // images: string[] = [
-  //     "https://t3.ftcdn.net/jpg/05/58/14/66/360_F_558146635_Pjgj1F8Au64JTeB9VGuas0Fm09OhEOGh.jpg",  // path to your image
-  //     "https://img.freepik.com/premium-photo/happy-birthday-cake-with-flowers-3d-render-pink-background_994418-11995.jpg",
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS86JGZBapFF0MhgRnLTNFh5MuzH8zX40SoGA&s",
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1taCQJG2I4BgGzZm-SryBJ2UW9e1HpF446g&s"
-  //   ];
-  //   currentIndex: number = 0;
+  Index: number = 0;
   
-  //   // Method to go to the next image
-  //   nextImage(): void {
-  //     this.currentIndex = (this.currentIndex + 1) % this.images.length;
-  //   }
   
-  //   // Method to go to the previous image
-  //   prevImage(): void {
-  //     this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-  //   }
   
   currentIndex: number = 0;  // Track the current image index
   images: string[] = [  // Array of image URLs

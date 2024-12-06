@@ -30,16 +30,13 @@
         
     }
     button {
-        background-color:lightcoral;
-        color: white;    
+        /* background-color:lightcoral; */
+        /* color: white;     */
         border:0cap; 
         cursor: pointer;
         padding:10px;
         width: 120px;
     }
-     button:hover {
-        background-color:darkcyan; 
-     }
     .sign{
         text-decoration: none;
     
