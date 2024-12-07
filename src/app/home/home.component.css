@@ -48,7 +48,7 @@
   .prev-btn:hover, .next-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }  
-  .image-index {
+  /* .image-index {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -56,4 +56,10 @@
     color: white;
     font-size: 18px;
   }
-  
+   */
+.gallery{
+  text-align: center;
+  color: purple;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}

@@ -36,7 +36,7 @@ import { NgForm } from '@angular/forms';
     if (form.valid) {
       alert('Form submitted successfully');
       console.log(form);
-      
+      form.reset();
     } else {
     alert('Form is invalid');
     }
