@@ -9,22 +9,22 @@
         <div class="form-group">
             <label for="firstName">First Name<span [ngClass]="['text-danger']">*</span></label>
             <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="login.fName"
-                #ftName="ngModel" minlength="6" required (keypress)="onlyLetters($event)" />
+                #ftName="ngModel" minlength="4" required (keypress)="onlyLetters($event)" />
                 <div *ngIf="ftName?.touched && ftName?.invalid" [ngClass]="['text-danger']">
                     <small *ngIf="ftName?.errors?.['required']">First name is required.</small>
                     <!-- <small *ngIf="firstName?.errors?.['pattern']"> First Name must only contain letters..</small> -->
-                    <small *ngIf="ftName?.errors?.['minlength']">First name must be at least 6 characters long.</small>
+                    <small *ngIf="ftName?.errors?.['minlength']">First name must be at least 4 characters long.</small>
                 </div>
         </div>
 
         <div class="form-group">
             <label for="lastName">Last Name</label>
             <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="login.lName"
-                #ltName="ngModel" [pattern]="lastNamePattern" required  minlength="6" (keypress)="onlyLetters($event)"/>
+                #ltName="ngModel" [pattern]="lastNamePattern" required  minlength="4" (keypress)="onlyLetters($event)"/>
                 <div *ngIf="ltName?.touched && ltName?.invalid" [ngClass]="['text-danger']">
                     <small *ngIf="ltName?.errors?.['required']">Last name is required.</small>
                     <small *ngIf="ltName?.errors?.['pattern']"> Last Name must only contain letters..</small>
-                    <small *ngIf="ltName?.errors?.['minlength']">Last name must be at least 6 characters long.</small>
+                    <small *ngIf="ltName?.errors?.['minlength']">Last name must be at least 4 characters long.</small>
                 </div>
         </div>
 

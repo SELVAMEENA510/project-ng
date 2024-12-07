@@ -34,12 +34,12 @@ import { NgForm } from '@angular/forms';
 
   onSubmit(form: any) {
     if (form.valid) {
+      const Data = form.value;
+      const jsonData = JSON.stringify(Data);
       alert('Form submitted successfully');
-      console.log(form);
+      console.log('Form Data in JSON format:', jsonData);
       form.reset();
-    } else {
-    alert('Form is invalid');
-    }
+    } 
   }
 
   onlyNumbers(event: KeyboardEvent): void {
