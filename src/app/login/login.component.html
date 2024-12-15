@@ -1,30 +1,18 @@
 <div class="main">
-    <h1>Log In</h1>
+    <h1>Sign In</h1>
 </div>
-
 
 <div class="container">
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
 
         <div class="form-group">
-            <label for="firstName">First Name<span [ngClass]="['text-danger']">*</span></label>
-            <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="login.fName"
-                #ftName="ngModel" minlength="4" required (keypress)="onlyLetters($event)" />
+            <label for="firstName">User Name<span [ngClass]="['text-danger']">*</span></label>
+            <input type="text" id="firstName" class="form-control" name="ftName" [(ngModel)]="login.ftName"
+                #ftName="ngModel" minlength="4" required/>
                 <div *ngIf="ftName?.touched && ftName?.invalid" [ngClass]="['text-danger']">
-                    <small *ngIf="ftName?.errors?.['required']">First name is required.</small>
-                    <!-- <small *ngIf="firstName?.errors?.['pattern']"> First Name must only contain letters..</small> -->
-                    <small *ngIf="ftName?.errors?.['minlength']">First name must be at least 4 characters long.</small>
-                </div>
-        </div>
-
-        <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="login.lName"
-                #ltName="ngModel" [pattern]="lastNamePattern" required  minlength="4" (keypress)="onlyLetters($event)"/>
-                <div *ngIf="ltName?.touched && ltName?.invalid" [ngClass]="['text-danger']">
-                    <small *ngIf="ltName?.errors?.['required']">Last name is required.</small>
-                    <small *ngIf="ltName?.errors?.['pattern']"> Last Name must only contain letters..</small>
-                    <small *ngIf="ltName?.errors?.['minlength']">Last name must be at least 4 characters long.</small>
+                    <small *ngIf="ftName?.errors?.['required']">User name is required.</small>
+                    <small *ngIf="ftName?.errors?.['pattern']"> User Name must only contain letters..</small>
+                    <small *ngIf="ftName?.errors?.['minlength']">User name must be at least 4 characters long.</small>
                 </div>
         </div>
 
@@ -39,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            <label for="phone">Phone<span [ngClass]="['text-danger']">*</span></label>
+            <label for="phone">Phone Number<span [ngClass]="['text-danger']">*</span></label>
             <input type="tel" id="phone" class="form-control" name="phone" [(ngModel)]="login.phne" #phne="ngModel"
                 [pattern]="phonePattern" required minlength="10" maxlength="10"  (keypress)="onlyNumbers($event)" />
                 <div *ngIf="phne?.touched && phne?.invalid" [ngClass]="['text-danger']">
@@ -50,11 +38,29 @@
 
                 </div>
         </div>
+        <div class="form-group">
+            <div>
+                <label for="password">Password<span [ngClass]="['text-danger']">*</span></label>
+                <input #passwrd="ngModel" type="password" class="form-control" name="password" id="" required [(ngModel)]="login.passwrd"
+                    [pattern]="passwordPattern" minlength="6">
+                <div *ngIf="passwrd?.touched && passwrd?.invalid" [ngClass]="['text-danger']">
+                    <small *ngIf="passwrd?.errors?.['required']">Password required.</small>
+                    <small *ngIf="passwrd?.errors?.['pattern']"> Must contain one letter, one number and a special character</small>
+                    <small *ngIf="passwrd?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+        
+                </div>
+            </div>
+
+                </div>
+    
 
        
 <br>
-        <button type="submit" (click)="onSubmit(loginForm)" [disabled]="loginForm.invalid">
+        <button type="submit"  [disabled]="loginForm.invalid">
             Submit
         </button>
-    </form>
+    <p>Already have an account? <a href="#" (click)="change($event)">Log in here</a></p> 
+
+<router-outlet></router-outlet>
+</form>
 </div>

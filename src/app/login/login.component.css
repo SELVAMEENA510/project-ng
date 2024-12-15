@@ -39,7 +39,8 @@
     }
     .sign{
         text-decoration: none;
-    
-    }
+        text-align: right;
+        width: 450px;
+       }
     
     
